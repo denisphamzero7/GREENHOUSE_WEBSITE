@@ -1,0 +1,41 @@
+<template>
+  <component :is="as" :class="`text-center text-2xl font-bold leading-9 tracking-tight  ${as}`">
+  <slot></slot></component>
+</template>
+
+<script setup>
+defineProps({
+    as:{
+        type: String,
+        default: 'h1',
+        validator:prop =>['h1','h2','h3','h4','h5','h6'].includes(prop)
+    }
+})
+</script>
+
+<style scoped>
+.h1{
+  @apply text-4xl font-bold text-gray-900;
+}
+
+.h2{
+  @apply text-2xl font-bold text-gray-900;
+}
+
+.h3{
+  @apply text-xl font-bold text-gray-900;
+}
+
+.h4{
+  @apply text-lg font-bold text-gray-900;
+}
+
+.h5{
+  @apply text-base font-bold text-gray-900;
+}
+
+.h6{
+  @apply text-sm font-bold text-gray-900;
+}
+
+</style>
